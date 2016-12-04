@@ -32,5 +32,20 @@ body {
 .navbar-inverse .navbar-brand {
   color: #A158CC;
   font-family: 'gooddogregular', sans-serif;
-  font-size: 30px;
+  font-size: 35px;
+}
+
+.my-paginate {
+  background: url('/assets/footer_lodyas.png');
+  font-size: 20px;
+  color: #A158CC;
+  word-spacing: 4px;
+}
+
+.my-paginate a {
+  color: #A158CC;
+}
+
+.my-paginate a:hover {
+  color: white;
 }
