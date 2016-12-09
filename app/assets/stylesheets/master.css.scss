@@ -37,9 +37,14 @@ body {
 
 .my-paginate {
   background: url('/assets/footer_lodyas.png');
-  font-size: 20px;
+  font-size: 25px;
   color: #A158CC;
-  word-spacing: 4px;
+  word-spacing: 10px;
+  font-family: 'gooddogregular', sans-serif;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .my-paginate a {
@@ -48,4 +53,5 @@ body {
 
 .my-paginate a:hover {
   color: white;
+  text-decoration: none;
 }
