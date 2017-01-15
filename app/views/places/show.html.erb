@@ -6,6 +6,7 @@
 
   <!--Displays all added pictures -->
   <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture %>
     <%= photo.caption %>
   <% end %>
 
@@ -93,6 +94,7 @@
 <div class="clear"></div>
 
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :picture %>
   <%= f.input :caption %>
   <%= f.submit "Upload a photo", class: "btn btn-primary" %>
 <% end %>
