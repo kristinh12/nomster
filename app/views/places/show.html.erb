@@ -10,6 +10,7 @@
     <%= photo.caption %>
   <% end %>
 
+  <!-- Displays a map of place -->
   <% if @place.latitude.present? && @place.longitude.present? %>    
     <script>
 
@@ -37,6 +38,7 @@
 
   <br />
   
+  <!-- Allows current user to edit or delete place details -->
   <div class = "pull-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -47,7 +49,7 @@
 
 <div class="clear"></div>
 
-<!-- Modal -->
+<!-- Modal for comments-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -71,7 +73,7 @@
 
 <div class="col-xs-10 col-xs-offset-1">
   <h1 class="pull-left">Comments</h1>
-  <!-- Button triggar model -->
+  <!-- Button triggar model for comments-->
   <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
     Add a comment
   </button>
@@ -79,6 +81,7 @@
 
 <div class="clear"></div>
 
+<!-- Lists all comments -->
 <% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
     <blockquote>
@@ -93,12 +96,12 @@
 
 <div class="clear"></div>
 
-<!-- Button trigger modal -->
+<!-- Button trigger modal for pictures-->
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#photoModal">
   Add a picture
 </button>
 
-<!-- Modal -->
+<!-- Modal for pictures -->
 <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
