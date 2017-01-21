@@ -6,8 +6,10 @@
 
   <!--Displays all added pictures -->
   <% @place.photos.each do |photo| %>
-    <%= image_tag photo.picture %>
-    <%= photo.caption %>
+    <div class='col-xs-12 col-md-4'>
+      <%= image_tag photo.picture, class: 'img-responsive picture' %>
+      <%= photo.caption %>
+    </div>
   <% end %>
 
   <!-- Displays a map of place -->
@@ -37,13 +39,23 @@
   <% end %>
 
   <br />
-  
+
+  <div class="clear"></div>
+
+  <br />
   <!-- Allows current user to edit or delete place details -->
   <div class = "pull-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
     <% end %>
+  </div>
+
+  <div class="pull-left">
+    <!-- Button trigger modal for pictures-->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#photoModal">
+      Add a picture
+    </button>
   </div>
 </div>
 
@@ -95,11 +107,6 @@
 <% end %>
 
 <div class="clear"></div>
-
-<!-- Button trigger modal for pictures-->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#photoModal">
-  Add a picture
-</button>
 
 <!-- Modal for pictures -->
 <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
