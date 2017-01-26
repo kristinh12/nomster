@@ -4,14 +4,6 @@
   <br/><br/>
   <p><%= @place.description %></p>
 
-  <!--Displays all added pictures -->
-  <% @place.photos.each do |photo| %>
-    <div class='col-xs-12 col-md-4'>
-      <%= image_tag photo.picture, class: 'img-responsive picture' %>
-      <%= photo.caption %>
-    </div>
-  <% end %>
-
   <!-- Displays a map of place -->
   <% if @place.latitude.present? && @place.longitude.present? %>    
     <script>
@@ -39,6 +31,14 @@
   <% end %>
 
   <br />
+
+    <!--Displays all added pictures -->
+  <% @place.photos.each do |photo| %>
+    <div class='col-xs-12 col-md-4'>
+      <%= image_tag photo.picture, class: 'img-responsive picture' %>
+      <%= photo.caption %>
+    </div>
+  <% end %>
 
   <div class="clear"></div>
 
