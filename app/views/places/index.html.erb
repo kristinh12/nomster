@@ -47,9 +47,11 @@
       <p><%= place.description %></p><br />
 
       <% if place.user.present? %>
-        <small><%= place.user.email %></small>
+        <small><i><%= place.user.email %></i></small>
       <% end %>
     </div>
+
+    <br />
 
     <% if place.photos.present? %>
       <div class="col-xs-12 col-md-6">
